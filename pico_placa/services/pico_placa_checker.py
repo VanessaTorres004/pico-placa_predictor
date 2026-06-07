@@ -12,14 +12,19 @@ class PicoPlacaChecker:
 
     def is_exempt_vehicle(self, plate: LicensePlate) -> bool:
         """
-        futuras implementaciones de reglas de exención para ciertos tipos de vehículos.
 
-        Ejemplos:
-        - vehiculos eléctricos o híbridos
-        - vehículos de emergencia (ambulancias, bomberos, policía)
-        - vehículos oficiales (gobierno, diplomáticos)
-        - vehículos de personas con discapacidad
-        """
+Future implementations of exemption rules for certain types of vehicles.
+
+Examples:
+
+- Electric or hybrid vehicles
+
+- Emergency vehicles (ambulances, fire trucks, police cars)
+
+- Official vehicles (government, diplomatic vehicles)
+
+- Vehicles for people with disabilities
+"""
         return False
 
     def is_restricted(self, plate: LicensePlate, dt: datetime) -> bool:

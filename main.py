@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""
-Pico y Placa Predictor — CLI
-Usage:
-    python main.py
-    python main.py --plate PBX-1234 --date 2024-03-19 --time 08:00
-"""
+
 import argparse
 import sys
 from datetime import datetime
@@ -48,7 +43,7 @@ def parse_plate(plate_str: str) -> LicensePlate:
 
 def display_result(result) -> None:
     color  = RED if result.restricted else GREEN
-    status = "Restringido" if result.restricted else "Permitido"
+    status = "Restricted" if result.restricted else "Allowed"
 
     print()
     print(f"{BOLD}{'─' * 48}{RESET}")
