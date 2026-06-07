@@ -4,11 +4,11 @@ from datetime import datetime
 
 @dataclass(frozen=True)
 class CheckResult:
-    plate:      str
-    date:       str
-    time:       str
+    plate: str
+    date: str
+    time: str
     restricted: bool
-    message:    str
+    message: str
 
     @classmethod
     def build(cls, plate: str, dt: datetime, restricted: bool) -> "CheckResult":
@@ -18,5 +18,9 @@ class CheckResult:
             date=dt.strftime("%Y-%m-%d"),
             time=dt.strftime("%H:%M"),
             restricted=restricted,
-            message=f"The vehicle with plate {plate} {status} at {dt.strftime('%H:%M')} on {dt.strftime('%A, %B %-d %Y')}.",
+            message=(
+                f"The vehicle with plate {plate} {status} "
+                f"at {dt.strftime('%H:%M')} on "
+                f"{dt.strftime('%A, %B')} {dt.day} {dt.year}."
+            ),
         )
